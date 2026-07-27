@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="cyan">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio — CloudExify Full Stack Web Development Internship 2026.">
+  <title id="pageTitle">My Portfolio | CloudExify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Background Blobs -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <nav class="navbar container">
+      <a href="#hero" class="logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text" id="navLogoName">Portfolio</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+      <div class="nav-right">
+        <!-- Edit Mode Toggle Button -->
+        <button id="editModeToggle" class="btn-edit-mode" title="Edit Portfolio">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+          </svg>
+          <span>Edit Portfolio</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="bar-line"></span>
+          <span class="bar-line"></span>
+          <span class="bar-line"></span>
+        </button>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero" class="hero-section container">
+      <div class="hero-layout">
+        <!-- Profile Photo -->
+        <div class="hero-photo-wrapper">
+          <div class="hero-photo-ring">
+            <img id="heroPhoto" src="" alt="Profile Photo" class="hero-photo hidden">
+            <div id="heroPhotoPlaceholder" class="hero-photo-placeholder">
+              <svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Add Photo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Text -->
+        <div class="hero-card glass">
+          <div class="hero-badge" id="heroBadge">CloudExify Internship 2026</div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="accent-text" id="heroName">Your Name</span>
+          </h1>
+          <h2 class="hero-subtitle">
+            I am <span id="typedText" class="typed-text"></span><span class="cursor">|</span>
+          </h2>
+          <p class="hero-description" id="heroBio">Click "Edit Portfolio" in the top-right to add your name, bio, skills, and projects.</p>
+          <div class="hero-actions" id="heroActions">
+            <a id="resumeLink" href="assets/resume.pdf" download class="btn btn-primary">
+              <span>Download Resume</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" class="about-section container">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-info glass">
+          <h3 id="aboutHeading">My Journey</h3>
+          <p id="aboutPara1" class="about-empty-hint">Your story will appear here once you edit your portfolio.</p>
+          <div class="about-details" id="aboutDetails"></div>
+        </div>
+
+        <!-- Visual Customizer Card -->
+        <div class="customizer-card glass">
+          <h3>Visual Customizer</h3>
+          <p>Personalise the look of your portfolio.</p>
+          <div class="control-group">
+            <h4 class="control-label">Theme Mode</h4>
+            <button id="themeToggle" class="btn-toggle" aria-label="Toggle theme">
+              <span class="toggle-track">
+                <span class="toggle-thumb">
+                  <svg class="icon-sun" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
+                  <svg class="icon-moon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                  </svg>
+                </span>
+              </span>
+              <span class="toggle-text">Dark Mode</span>
+            </button>
+          </div>
+          <div class="control-group">
+            <h4 class="control-label">Accent Color</h4>
+            <div class="accent-selectors">
+              <button class="accent-btn btn-cyan active" data-accent="cyan" aria-label="Cyan"></button>
+              <button class="accent-btn btn-purple" data-accent="purple" aria-label="Purple"></button>
+              <button class="accent-btn btn-emerald" data-accent="emerald" aria-label="Emerald"></button>
+            </div>
+          </div>
+          <div class="easter-egg-tip">
+            <svg class="tip-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span>Tip: Type <span class="code-word">secret</span> or try the Konami code!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section id="skills" class="skills-section container">
+      <div class="section-header">
+        <h2 class="section-title">My Toolbox</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid" id="skillsGrid">
+        <div class="skills-empty glass">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <p>No skills added yet. Click <strong>"Edit Portfolio"</strong> to add your skills.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="projects" class="projects-section container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Work</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="filter-container" id="filterContainer" style="display:none">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
+        <div class="skills-empty glass">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <p>No projects added yet. Click <strong>"Edit Portfolio"</strong> to showcase your work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="contact-section container">
+      <div class="section-header">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-info-card glass">
+          <h3>Let's Collaborate</h3>
+          <p id="contactBlurb">Have an interesting project or internship opportunity? Drop a message!</p>
+          <div class="contact-methods" id="contactMethods"></div>
+        </div>
+        <div class="contact-form-card glass">
+          <form id="contactForm" novalidate>
+            <div id="formStatus" class="form-status" aria-live="polite"></div>
+            <div class="form-group">
+              <label for="formName" class="form-label">Full Name</label>
+              <input type="text" id="formName" name="name" class="form-input" placeholder="Your name" required>
+              <span class="error-msg" id="nameError">Name is required.</span>
+            </div>
+            <div class="form-group">
+              <label for="formEmail" class="form-label">Email Address</label>
+              <input type="email" id="formEmail" name="email" class="form-input" placeholder="your@email.com" required>
+              <span class="error-msg" id="emailError">Please enter a valid email.</span>
+            </div>
+            <div class="form-group">
+              <label for="formMessage" class="form-label">Message</label>
+              <textarea id="formMessage" name="message" rows="4" class="form-input" placeholder="Your message..." required></textarea>
+              <span class="error-msg" id="messageError">Message cannot be empty.</span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">
+              <span>Send Message</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p id="footerText">&copy; 2026 CloudExify Summer Internship.</p>
+      <a href="#hero" class="footer-top">Back to top</a>
+    </div>
+  </footer>
+
+  <!-- ===== EASTER EGG DIALOG ===== -->
+  <dialog id="easterEggDialog" class="easter-dialog glass">
+    <div class="easter-header">
+      <div class="terminal-dots">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      </div>
+      <h3>System Alert: Security Bypassed</h3>
+    </div>
+    <div class="easter-body">
+      <div class="badge-glow-container">
+        <div class="neon-badge">
+          <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.5" class="badge-icon">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+      </div>
+      <h2>ACHIEVEMENT UNLOCKED</h2>
+      <p class="easter-code-title">Master Full Stack Intern</p>
+      <p class="easter-desc">You successfully bypassed the visual matrix! The CloudExify terminal grants you access to special internship privileges.</p>
+      <div class="easter-stats">
+        <div class="stat-box"><span class="stat-num">99</span><span class="stat-lbl">Web Skill</span></div>
+        <div class="stat-box"><span class="stat-num">S+</span><span class="stat-lbl">Rank</span></div>
+      </div>
+      <button id="closeDialog" class="btn btn-primary">Close Connection</button>
+    </div>
+  </dialog>
+
+  <!-- ===== EDIT PANEL DRAWER ===== -->
+  <div id="editOverlay" class="edit-overlay"></div>
+  <aside id="editPanel" class="edit-panel glass" aria-hidden="true">
+    <div class="edit-panel-header">
+      <h2>Edit Portfolio</h2>
+      <button id="closeEditPanel" class="btn-icon-only" aria-label="Close edit panel">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="edit-panel-body">
+
+      <!-- PROFILE PHOTO -->
+      <div class="edit-section">
+        <h3 class="edit-section-title">Profile Photo</h3>
+        <div class="photo-upload-area" id="photoUploadArea">
+          <img id="photoPreview" src="" alt="Preview" class="photo-preview hidden">
+          <div id="photoUploadPlaceholder" class="photo-placeholder-inner">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <span>Click to upload photo</span>
+            <small>JPG, PNG, WEBP — max 5 MB</small>
+          </div>
+          <input type="file" id="photoInput" accept="image/jpeg,image/png,image/webp" class="hidden">
+        </div>
+        <button id="removePhotoBtn" class="btn-danger-sm hidden">Remove Photo</button>
+      </div>
+
+      <!-- BASIC INFO -->
+      <div class="edit-section">
+        <h3 class="edit-section-title">Basic Info</h3>
+        <div class="edit-field">
+          <label class="edit-label">Full Name</label>
+          <input type="text" id="editName" class="edit-input" placeholder="e.g. Sarah Ahmed">
+        </div>
+        <div class="edit-field">
+          <label class="edit-label">Tagline / Roles (comma-separated)</label>
+          <input type="text" id="editRoles" class="edit-input" placeholder="e.g. Full Stack Developer, UI Designer">
+        </div>
+        <div class="edit-field">
+          <label class="edit-label">Short Bio</label>
+          <textarea id="editBio" rows="3" class="edit-input" placeholder="Write 1-2 sentences about yourself..."></textarea>
+        </div>
+        <div class="edit-field">
+          <label class="edit-label">Location</label>
+          <input type="text" id="editLocation" class="edit-input" placeholder="e.g. Lahore, Pakistan">
+        </div>
+        <div class="edit-field">
+          <label class="edit-label">Status</label>
+          <input type="text" id="editStatus" class="edit-input" placeholder="e.g. Open to Internships">
+        </div>
+        <div class="edit-field">
+          <label class="edit-label">Email (for contact info)</label>
+          <input type="email" id="editEmail" class="edit-input" placeholder="you@example.com">
+        </div>
+        <div class="edit-field">
+          <label class="edit-label">GitHub URL</label>
+          <input type="url" id="editGithub" class="edit-input" placeholder="https://github.com/yourusername">
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="edit-section">
+        <h3 class="edit-section-title">Skills</h3>
+        <div id="skillsEditList" class="skills-edit-list"></div>
+        <button id="addSkillBtn" class="btn-add-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add Skill
+        </button>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="edit-section">
+        <h3 class="edit-section-title">Projects</h3>
+        <div id="projectsEditList" class="projects-edit-list"></div>
+        <button id="addProjectBtn" class="btn-add-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add Project
+        </button>
+      </div>
+
+    </div><!-- end edit-panel-body -->
+
+    <div class="edit-panel-footer">
+      <button id="savePortfolioBtn" class="btn btn-primary btn-save">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        Save All Changes
+      </button>
+      <button id="cancelEditBtn" class="btn btn-secondary">Cancel</button>
+    </div>
+  </aside>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
