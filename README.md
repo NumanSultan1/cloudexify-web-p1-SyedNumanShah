@@ -7,7 +7,7 @@ This repository contains my submission for **Project 1: Personal Portfolio Websi
 
 ### 📋 Intern Credentials & Info
 - **Developer Name:** Syed Numan Shah
-- **Registration Number:** CX-INT-2026-9842
+- **Registration Number:** CX-INT-2026-GEN-0192
 - **Build Track Chosen:** Glass & Gradient (Futuristic / SaaS Theme)
 - **Live Vercel Link:** https://cloudexify-web-p1-syed-numan-shah.vercel.app
 
